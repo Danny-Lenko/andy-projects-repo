@@ -34,4 +34,15 @@ body {
   padding: 2px 5px;
   background-color: #f5f9ff;
 }
+
+.output {
+  margin: 0 auto;
+  width: 60vw;
+  text-align: center;
+}
+
+.output__ul {
+  list-style-type: none;
+  font-size: 1.5rem;
+}
 /*# sourceMappingURL=styles.css.map */
