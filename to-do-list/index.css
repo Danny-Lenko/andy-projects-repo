@@ -77,3 +77,7 @@ select {
 
 /* ========= end of reset settings =========== */
 
+button {
+  font-weight: 500;
+  cursor: pointer;
+}

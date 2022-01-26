@@ -1,3 +1,48 @@
 body {
+   background-color: #f5f9ff;
+}
+.white-wrapper {
+   max-width: 65vw;
+   padding: 2rem 0;
+   margin: 7vh auto ;
    background-color: white;
+   box-shadow: 0 8px 60px 0 rgba(103, 151, 255, .11), 0 12px 90px 0 rgba(103, 151, 255, .11);
+   border-radius: 10px;
+   height: 100vh;
+}
+
+.input {
+   border: 3px solid black;
+   border-radius: 60px;
+   max-width: 57vw;
+   min-width: 400px;
+   margin: 0 auto ;
+   text-align: center;
+
+   &__h1 {
+      font-size: 3.3rem;
+      margin: .5em auto;
+   }
+
+   &__inputField {
+      margin-bottom: 2em;
+      border: 2px solid black;
+      border-radius: 5px;
+      padding: 2px 5px;
+      background-color: #f5f9ff;
+   }
+
+   &__submitBtn {
+   }
+
+   &__clearBtn {
+   }
+}
+.output {
+
+   &__h2 {
+   }
+
+   &__ul {
+   }
 }
