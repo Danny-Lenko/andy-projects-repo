@@ -27,17 +27,19 @@
 
 ### What I learned
 
-1) the Utility Classes "gap" property to use between flex and grid elements (html customizable variable)
+1) the way to make a copy of a DOM element with its children
 
-```css
-.flex {
-   display: flex;
-   gap: var(--gap, 1.6rem);
+```js
+let someObj = {
+      createNewRow: function() {
+      const tBody = document.querySelector('#tBody');
+      const expenseRow = document.querySelector('.output__tr');
+
+      tBody.appendChild(expenseRow.cloneNode(true));
+   }
 }
-.grid {
-   display: grid;
-   gap: var(--gap, 1.6rem);
-}
+
+
 ```
 
 ### Continued development
