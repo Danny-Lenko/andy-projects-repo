@@ -2,7 +2,7 @@
    display: flex;
    flex-direction: column;
    max-width: 60vw;
-   margin: 5vh auto;
+   margin: 4vh auto;
    justify-content: center;
    text-align: center;
 }
@@ -38,6 +38,7 @@
 		&__h1 {
          font-weight: 300;
          font-size: 3rem;
+         margin-bottom: .5em;
 		}
 
 		&__subtitle {

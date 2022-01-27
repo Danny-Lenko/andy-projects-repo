@@ -7,13 +7,23 @@ window.onload = function() {
 let view = {
    displayExpense: function(name, date, amount) {
       const expenseRowsList = document.getElementsByClassName('output__tr');
-      if (expenseRowsList.length < 2) {
-         expenseRowsList[0].children[0].innerHTML = name;
-         expenseRowsList[0].children[1].innerHTML = date;
-         expenseRowsList[0].children[2].innerHTML = amount;
-         expenseRowsList[0].children[3].innerHTML = `<button>X</button>`
+      const args = [name, date, amount, `<button>X</button>`];
+
+      if (expenseRowsList[0].children[3].innerHTML === '') {
+         for (let j = 0; j < expenseRowsList.length; j++) {
+            for (let i = 0; i < expenseRowsList[j].children.length; i++) {
+               expenseRowsList[j].children[i].innerHTML = args[i];
+            }
+         }
+      } else {
+         console.log('queue is busy');
+         controller.createNewRow();
+         for (let j = 0; j < expenseRowsList.length; j++) {
+            for (let i = 0; i < expenseRowsList[j].children.length; i++) {
+               expenseRowsList[j].children[i].innerHTML = args[i];
+            }
+         }
       }
-      // const rowElement = document.querySelector(`#${controller.clicks}`);
 
    }
 };
@@ -28,14 +38,20 @@ let controller = {
          controller.clicks++;
          view.displayExpense(expenseName, expenseDate, expenseAmount);
 
-         console.log(expenseName, expenseDate, expenseAmount);
          document.querySelector('#name').value = '';
          document.querySelector('#amount').value = '';
       }
+   },
+   createNewRow: function() {
+      const tBody = document.querySelector('#tBody');
+      const expenseRow = document.querySelector('.output__tr');
+
+      tBody.appendChild(expenseRow.cloneNode(true));
    }
 };
 
-// const expenseRowsList = document.getElementsByClassName('output__tr');
-// console.log(expenseRowsList);
+const expenseRowsList = document.getElementsByClassName('output__tr');
+console.log(expenseRowsList);
 // console.log(expenseRowsList[0].children[0].innerHTML);
 
+// controller.createNewRow();

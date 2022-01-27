@@ -7,7 +7,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 60vw;
-  margin: 5vh auto;
+  margin: 4vh auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -60,6 +60,7 @@
 .input__h1 {
   font-weight: 300;
   font-size: 3rem;
+  margin-bottom: .5em;
 }
 
 .input__subtitle {
