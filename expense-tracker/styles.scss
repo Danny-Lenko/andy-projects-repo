@@ -1,3 +1,59 @@
-body {
-   background: gray;
+.overall {
+   display: flex;
+   flex-direction: column;
+   max-width: 60vw;
+   margin: 5vh auto;
+   justify-content: center;
+   text-align: center;
+}
+.input {
+   form p {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+   }
+   form p input {
+      flex: 1 1 auto;
+      margin-bottom: .5em;
+      padding: .2em;
+      border: 1px solid grey;
+   }
+   form p label {
+      padding-right: .3em;
+      align-self: center;
+   }
+   #amount-label {
+      padding-left: .5em;
+   }
+   #addBtn {
+      flex: 0;
+      background-color: green;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      padding: .5em 1em;
+   }
+		&__h1 {
+         font-weight: 300;
+         font-size: 3rem;
+		}
+
+		&__subtitle {
+         color:green;
+         font-size: 1.2rem;
+         font-weight: 600;
+         margin-bottom: .6em;
+		}
+}
+.output {
+
+		&__table {
+         border: 1px solid grey;
+		}
+
+		&__th {
+		}
+
+		&__tr {
+		}
 }

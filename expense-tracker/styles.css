@@ -1,4 +1,73 @@
-body {
-  background: gray;
+.overall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 60vw;
+  margin: 5vh auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.input form p {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input form p input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-bottom: .5em;
+  padding: .2em;
+  border: 1px solid grey;
+}
+
+.input form p label {
+  padding-right: .3em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.input #amount-label {
+  padding-left: .5em;
+}
+
+.input #addBtn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: .5em 1em;
+}
+
+.input__h1 {
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.input__subtitle {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: .6em;
+}
+
+.output__table {
+  border: 1px solid grey;
 }
 /*# sourceMappingURL=styles.css.map */

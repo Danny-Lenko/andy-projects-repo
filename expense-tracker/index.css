@@ -77,3 +77,6 @@ select {
 
 /* ========= end of reset settings =========== */
 
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
