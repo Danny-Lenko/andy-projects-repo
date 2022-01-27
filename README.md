@@ -48,7 +48,9 @@
 
 ### Useful resources
 
-- [Grid Attack](https://codingfantasy.com) - This helped me practice CSS GRID. Challenging and interactive game aimed at learning the css grid properties' application.
+- [Find li index](https://stackoverflow.com/questions/18295673/javascript-find-li-index-within-ul) - This helped me build the To-Do app.
+- [Data from form to table](https://stackoverflow.com/questions/18295673/javascript-find-li-index-within-ul) - Has the answer how to do it with the plain JS.
+
 
 - [Git + GitHub](https://www.youtube.com/watch?v=RGOj5yH7evk) - the basic git commands (Youtube).
 - [The Markdown Guide](https://www.markdownguide.org/) - for more help with writing markdown (Article).
