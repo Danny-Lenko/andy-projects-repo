@@ -14,9 +14,9 @@
    }
    form p input {
       flex: 1 1 auto;
-      margin-bottom: .5em;
+      margin-bottom: .7em;
       padding: .2em;
-      border: 1px solid grey;
+      border: 1px solid #CDCDCD;
    }
    form p label {
       padding-right: .3em;
@@ -32,6 +32,8 @@
       color: white;
       border-radius: 4px;
       padding: .5em 1em;
+      margin-bottom: 2em;
+      cursor: pointer;
    }
 		&__h1 {
          font-weight: 300;
@@ -46,14 +48,37 @@
 		}
 }
 .output {
+   thead th,
+   tbody td {
+      padding: 10px;
+      border: 1px solid #e5e5e5;
+   }
 
 		&__table {
-         border: 1px solid grey;
+         table-layout: fixed;
+         width: 100%;
+         border-collapse: collapse;
+         border: 1px solid #CDCDCD;
+         text-align: left;
 		}
 
 		&__th {
+         th:nth-child(2) {
+            width: 25%;
+         }
+         th:nth-child(3) {
+            width: 20%;
+         }
+
+         th:last-child {
+            width: 8%;
+         }
 		}
 
-		&__tr {
+		&__tr:nth-child(odd) {
+         background-color: #f1f1f1;
 		}
+      &__tr:nth-child(even) {
+         background-color: #eaeaea;
+      }
 }
