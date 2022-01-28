@@ -1,0 +1,84 @@
+.overall {
+   display: flex;
+   flex-direction: column;
+   max-width: 60vw;
+   margin: 4vh auto;
+   justify-content: center;
+   text-align: center;
+}
+.input {
+   form p {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+   }
+   form p textarea {
+      flex: 1 1 auto;
+      margin-bottom: .7em;
+      padding: .2em;
+      border: 1px solid #CDCDCD;
+   }
+   form p label {
+      padding-right: .3em;
+   }
+   #amount-label {
+      padding-left: .5em;
+   }
+   #addBtn {
+      flex: 0;
+      background-color: green;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      padding: .5em 1em;
+      margin-bottom: 2em;
+      cursor: pointer;
+   }
+		&__h1 {
+         font-weight: 300;
+         font-size: 3rem;
+         margin-bottom: .5em;
+		}
+
+		&__subtitle {
+         color:green;
+         font-size: 1.2rem;
+         font-weight: 600;
+         margin-bottom: .6em;
+		}
+}
+.output {
+   thead th,
+   tbody td {
+      padding: 10px;
+      border: 1px solid #e5e5e5;
+   }
+
+		&__table {
+         table-layout: fixed;
+         width: 100%;
+         border-collapse: collapse;
+         border: 1px solid #CDCDCD;
+         text-align: left;
+		}
+
+		&__th {
+         th:nth-child(2) {
+            width: 25%;
+         }
+         th:nth-child(3) {
+            width: 20%;
+         }
+
+         th:last-child {
+            width: 8%;
+         }
+		}
+
+		&__tr:nth-child(odd) {
+         background-color: #f1f1f1;
+		}
+      &__tr:nth-child(even) {
+         background-color: #eaeaea;
+      }
+}

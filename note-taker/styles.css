@@ -1,0 +1,103 @@
+.overall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 60vw;
+  margin: 4vh auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.input form p {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input form p textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-bottom: .7em;
+  padding: .2em;
+  border: 1px solid #CDCDCD;
+}
+
+.input form p label {
+  padding-right: .3em;
+}
+
+.input #amount-label {
+  padding-left: .5em;
+}
+
+.input #addBtn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: .5em 1em;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.input__h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: .5em;
+}
+
+.input__subtitle {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: .6em;
+}
+
+.output thead th,
+.output tbody td {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.output__table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #CDCDCD;
+  text-align: left;
+}
+
+.output__th th:nth-child(2) {
+  width: 25%;
+}
+
+.output__th th:nth-child(3) {
+  width: 20%;
+}
+
+.output__th th:last-child {
+  width: 8%;
+}
+
+.output__tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+.output__tr:nth-child(even) {
+  background-color: #eaeaea;
+}
+/*# sourceMappingURL=styles.css.map */
