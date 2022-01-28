@@ -62,6 +62,24 @@
       p {
          font-size: .9rem;
       }
+      .detailBtn,
+      .delBtn {
+         font-size: .8rem;
+         color:white;
+         border: none;
+         border-radius: 2px;
+         padding: .3em .8em;
+         margin-top: 1em;
+         cursor: pointer;
+      }
+      .detailBtn {
+         background-color:#2874a6;
+      }
+      .delBtn {
+         background-color:#b03a2e;
+         margin-left: .5em;
+      }
+      
    }
    div:nth-child(odd) {
       margin-left: 1em;

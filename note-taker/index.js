@@ -8,9 +8,20 @@ let view = {
    addContentToNoteContainer: function(containers) {
       for (let i = 1; i < containers.length; i++) {
          containers[i].children[0].innerHTML = `Note ${i}`;
-         containers[i].children[1].innerHTML = controller.notes[i - 1];
+         containers[i].children[1].innerHTML = this.truncateString(controller.notes[i - 1]);
+         containers[i].children[2].innerHTML = 'View Detail';
+         containers[i].children[2].classList.add('detailBtn');
+         containers[i].children[3].innerHTML = 'X';
+         containers[i].children[3].classList.add('delBtn');
       }
-   }
+      
+   },
+   truncateString: function(str) {
+      if (str.length > 90) {
+         str = str.slice(0, 90) + "...";
+       }
+       return str;
+   }     
 
 };
 
