@@ -7,7 +7,7 @@ window.onload = function() {
 
 let view = {
    renderInput: function(tasks) {
-      let ulList = document.querySelector('.output__ul');
+      const ulList = document.querySelector('.output__ul');
       ulList.innerHTML = '';
       for (let i = 0; i < tasks.length; i++) {
          if (controller.doneElements.some(element => tasks[i] === element)) {
@@ -24,17 +24,17 @@ let view = {
       }
    },
    crossOut: function(element) {
-      let parentElement = element.parentNode;
-      let allTheContent = parentElement.children;
+      const parentElement = element.parentNode;
+      const allTheContent = parentElement.children;
       allTheContent[0].classList.add('doneTasks');
    }
 };
 
 let controller = {
-   tasks: ['hello', 'world'],
+   tasks: [],
    doneElements: [],
    submitInput: function() {
-      let userInput = document.querySelector('#inputField').value;
+      const userInput = document.querySelector('#inputField').value;
       if (userInput) {
          controller.tasks.push(userInput);
          document.querySelector('#inputField').value = '';
@@ -48,7 +48,7 @@ let controller = {
    },
 };
 
-let ulEl = document.querySelector('.output__ul');
+const ulEl = document.querySelector('.output__ul');
 
 function removeItem(e) {
    if (e.target.classList.contains('removeBtn')) {
