@@ -37,10 +37,6 @@
   padding-right: .3em;
 }
 
-.input #amount-label {
-  padding-left: .5em;
-}
-
 .input #addBtn {
   -webkit-box-flex: 0;
       -ms-flex: 0;
@@ -67,37 +63,9 @@
   margin-bottom: .6em;
 }
 
-.output thead th,
-.output tbody td {
-  padding: 10px;
-  border: 1px solid #e5e5e5;
-}
-
-.output__table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #CDCDCD;
-  text-align: left;
-}
-
-.output__th th:nth-child(2) {
-  width: 25%;
-}
-
-.output__th th:nth-child(3) {
-  width: 20%;
-}
-
-.output__th th:last-child {
-  width: 8%;
-}
-
-.output__tr:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-
-.output__tr:nth-child(even) {
-  background-color: #eaeaea;
+.output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=styles.css.map */
