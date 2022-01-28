@@ -21,9 +21,7 @@
    form p label {
       padding-right: .3em;
    }
-   #amount-label {
-      padding-left: .5em;
-   }
+
    #addBtn {
       flex: 0;
       background-color: green;
@@ -48,37 +46,7 @@
 		}
 }
 .output {
-   thead th,
-   tbody td {
-      padding: 10px;
-      border: 1px solid #e5e5e5;
-   }
-
-		&__table {
-         table-layout: fixed;
-         width: 100%;
-         border-collapse: collapse;
-         border: 1px solid #CDCDCD;
-         text-align: left;
+   
 		}
 
-		&__th {
-         th:nth-child(2) {
-            width: 25%;
-         }
-         th:nth-child(3) {
-            width: 20%;
-         }
-
-         th:last-child {
-            width: 8%;
-         }
-		}
-
-		&__tr:nth-child(odd) {
-         background-color: #f1f1f1;
-		}
-      &__tr:nth-child(even) {
-         background-color: #eaeaea;
-      }
 }
