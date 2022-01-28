@@ -47,5 +47,16 @@
 }
 .output {
    display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   div {
+      border: 1px solid #CDCDCD;
+      min-width: 40%;
+      flex: 1 1 auto;
+      margin-bottom: .5em;
+   }
+   div:nth-child(odd) {
+      margin-left: 1em;
+   }
 
 }
