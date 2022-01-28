@@ -11,51 +11,44 @@ let view = {
       if (expenseRowsList[0].children[3].innerHTML && controller.needNewRow) {
          controller.createNewRow();
       }
-      this.wipeOutExpenses();
-      this.renderExpenses();
-
-      this.removeExpense();
+      this.wipeOutExpenses(expenseRowsList);
+      this.renderExpenses(expenseRowsList);
+      this.removeExpense(expenseRowsList);
    },
 
-   renderExpenses: function() {
-      const expenseRowsList = document.getElementsByClassName('output__tr');
-
+   renderExpenses: function(list) {
       for (let i = 0; i < controller.expensesData.length; i++) {
-         expenseRowsList[i].children[0].innerHTML = controller.expensesData[i].name;
-         expenseRowsList[i].children[1].innerHTML = controller.expensesData[i].date;
-         expenseRowsList[i].children[2].innerHTML = controller.expensesData[i].amount;
-         expenseRowsList[i].children[3].innerHTML = controller.expensesData[i].btn;
+         list[i].children[0].innerHTML = controller.expensesData[i].name;
+         list[i].children[1].innerHTML = controller.expensesData[i].date;
+         list[i].children[2].innerHTML = controller.expensesData[i].amount;
+         list[i].children[3].innerHTML = controller.expensesData[i].btn;
       }
    },
 
-   wipeOutExpenses: function() {
-      const expenseRowsList = document.getElementsByClassName('output__tr');
-
-      for (let i = 0; i < expenseRowsList.length; i++) {
-         for (let j = 0; j < expenseRowsList[i].children.length; j++) {
-            expenseRowsList[i].children[j].innerHTML = '';
+   wipeOutExpenses: function(list) {
+      for (let i = 0; i < list.length; i++) {
+         for (let j = 0; j < list[i].children.length; j++) {
+            list[i].children[j].innerHTML = '';
          }
       }
    },
 
-   removeExpense: function() {
-      const expenseRowsList = document.getElementsByClassName('output__tr');
+   removeExpense: function(list) {
       for (let i = 0; i < controller.expensesData.length; i++) {
-         expenseRowsList[i].children[3].children[0].addEventListener('click', () => {
+         list[i].children[3].children[0].addEventListener('click', () => {
             controller.needNewRow = false;
             controller.expensesData.splice(i, 1);
             this.displayExpense();
          });
       }
-      this.checkRowsNumber();
+      this.checkRowsNumber(list);
    },
 
-   checkRowsNumber: function() {
-      const expenseRowsList = document.getElementsByClassName('output__tr');
-      for (let i = 0; i < expenseRowsList.length; i++) {
-         if (expenseRowsList.length > controller.expensesData.length 
-             && expenseRowsList.length > 1) {
-            expenseRowsList[0].parentNode.removeChild(expenseRowsList[expenseRowsList.length - 1]);
+   checkRowsNumber: function(list) {
+      for (let i = 0; i < list.length; i++) {
+         if (list.length > controller.expensesData.length 
+             && list.length > 1) {
+            list[0].parentNode.removeChild(list[list.length - 1]);
          }
       }
    }
