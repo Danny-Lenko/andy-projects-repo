@@ -38,8 +38,18 @@ let someObj = {
       tBody.appendChild(expenseRow.cloneNode(true));
    }
 }
+```
 
-
+2) learned to fit content in one or two even columns
+```css
+div {
+   border: 1px solid #CDCDCD;
+   min-width: 40%;
+   flex: 1 1 0;
+   margin-bottom: .5em;
+   text-align: left;
+   padding: .5em;
+}
 ```
 
 ### Continued development

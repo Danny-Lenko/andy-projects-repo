@@ -78,9 +78,19 @@
   border: 1px solid #CDCDCD;
   min-width: 40%;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
   margin-bottom: .5em;
+  text-align: left;
+  padding: .5em;
+}
+
+.output div h3 {
+  font-size: 1rem;
+}
+
+.output div p {
+  font-size: .9rem;
 }
 
 .output div:nth-child(odd) {
