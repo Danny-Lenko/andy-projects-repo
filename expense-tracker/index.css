@@ -80,3 +80,11 @@ select {
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.delBtn {
+  color: white;
+  background-color: green;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}

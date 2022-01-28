@@ -11,14 +11,43 @@ let view = {
       if (expenseRowsList[0].children[3].innerHTML) {
          controller.createNewRow();
       }
+      this.wipeOutExpenses();
+      this.renderExpenses();
 
-      for (let i = 0; i < expenseRowsList.length; i++) {
+      this.removeExpense();
+   },
+
+   renderExpenses: function() {
+      const expenseRowsList = document.getElementsByClassName('output__tr');
+
+      for (let i = 0; i < controller.expensesData.length; i++) {
          expenseRowsList[i].children[0].innerHTML = controller.expensesData[i].name;
          expenseRowsList[i].children[1].innerHTML = controller.expensesData[i].date;
          expenseRowsList[i].children[2].innerHTML = controller.expensesData[i].amount;
          expenseRowsList[i].children[3].innerHTML = controller.expensesData[i].btn;
       }
+   },
+
+   wipeOutExpenses: function() {
+      const expenseRowsList = document.getElementsByClassName('output__tr');
+
+      for (let i = 0; i < expenseRowsList.length; i++) {
+         for (let j = 0; j < expenseRowsList[i].children.length; j++) {
+            expenseRowsList[i].children[j].innerHTML = '';
+         }
+      }
+   },
+
+   removeExpense: function() {
+      const expenseRowsList = document.getElementsByClassName('output__tr');
+      for (let i = 0; i < controller.expensesData.length; i++) {
+         expenseRowsList[i].children[3].children[0].addEventListener('click', () => {
+            controller.expensesData.splice(i, 1);
+            this.displayExpense();
+         });
+      }
    }
+
 };
 
 let controller = {
@@ -35,6 +64,8 @@ let controller = {
          document.querySelector('#name').value = '';
          document.querySelector('#amount').value = '';
       }
+
+      console.log(controller.expensesData);
    },
    createNewRow: function() {
       const tBody = document.querySelector('#tBody');
@@ -47,14 +78,9 @@ let controller = {
          name: document.querySelector('#name').value, 
          date: document.querySelector('#date').value, 
          amount: document.querySelector('#amount').value, 
-         btn: `<button>X</button>` 
+         btn: `<button class="delBtn" role='delete'>X</button>` 
       });
-      console.log(this.expensesData[0].name);
    }
 };
 
-const expenseRowsList = document.getElementsByClassName('output__tr');
-console.log(expenseRowsList);
-// console.log(expenseRowsList[0].children[0].innerHTML);
 
-// controller.createNewRow();
