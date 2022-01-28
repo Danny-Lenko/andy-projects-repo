@@ -8,7 +8,7 @@ let view = {
    displayExpense: function() {
       const expenseRowsList = document.getElementsByClassName('output__tr');
 
-      if (expenseRowsList[0].children[3].innerHTML) {
+      if (expenseRowsList[0].children[3].innerHTML && controller.needNewRow) {
          controller.createNewRow();
       }
       this.wipeOutExpenses();
@@ -42,9 +42,21 @@ let view = {
       const expenseRowsList = document.getElementsByClassName('output__tr');
       for (let i = 0; i < controller.expensesData.length; i++) {
          expenseRowsList[i].children[3].children[0].addEventListener('click', () => {
+            controller.needNewRow = false;
             controller.expensesData.splice(i, 1);
             this.displayExpense();
          });
+      }
+      this.checkRowsNumber();
+   },
+
+   checkRowsNumber: function() {
+      const expenseRowsList = document.getElementsByClassName('output__tr');
+      for (let i = 0; i < expenseRowsList.length; i++) {
+         if (expenseRowsList.length > controller.expensesData.length 
+             && expenseRowsList.length > 1) {
+            expenseRowsList[0].parentNode.removeChild(expenseRowsList[expenseRowsList.length - 1]);
+         }
       }
    }
 
@@ -52,12 +64,14 @@ let view = {
 
 let controller = {
    expensesData: [],
+   needNewRow: false,
    addExpense: function() {
       const expenseName = document.querySelector('#name').value;
       const expenseDate = document.querySelector('#date').value;
       const expenseAmount = document.querySelector('#amount').value;
 
       if (expenseName && expenseDate && expenseAmount) {
+         controller.needNewRow = true;
          controller.fetchInputData();
          view.displayExpense();
 
