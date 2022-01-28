@@ -13,15 +13,20 @@ let view = {
          containers[i].children[2].classList.add('detailBtn');
          containers[i].children[3].innerHTML = 'X';
          containers[i].children[3].classList.add('delBtn');
+
+         containers[i].children[2].addEventListener('click', () => {
+            console.log(controller.notes[i-1]);
+         })
       }
-      
    },
    truncateString: function(str) {
       if (str.length > 90) {
          str = str.slice(0, 90) + "...";
        }
        return str;
-   }     
+   },
+
+   
 
 };
 
