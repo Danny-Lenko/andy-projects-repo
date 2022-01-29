@@ -2,6 +2,7 @@
 
 window.onload = function() {
    document.querySelector('#addBtn').addEventListener('click', controller.addNote);
+   document.querySelector('#outputSection').addEventListener('click', controller.getTargetIndex);
 }
 
 let view = {
@@ -13,8 +14,6 @@ let view = {
          containers[i].children[2].classList.add('detailBtn');
          containers[i].children[3].innerHTML = 'X';
          containers[i].children[3].classList.add('delBtn');
-
-         // this.viewDetail(containers, i);
       }
 
 
@@ -59,18 +58,34 @@ let controller = {
       view.addContentToNoteContainer(outputSection.children);
       console.log(outputSection.children);
    },
+
+   getTargetIndex: function(e) {
+      const child = e.target;
+      const parent = child.parentNode;
+      const grandParent = parent.parentNode;
+      const index = Array.prototype.indexOf.call(grandParent.children, parent);
+      console.log(index);
+
+   }
 }
 
-const outputSection = document.querySelector('#outputSection');
 
-function showTarget(e) {
-   let child = e.target;
-   let parent = child.parentNode;
-   let grandParent = parent.parentNode;
-   console.log(grandParent);
-   let index = Array.prototype.indexOf.call(grandParent.children, parent);
-   console.log(index);
 
-} 
 
-outputSection.addEventListener('click', showTarget);
+
+
+
+// const outputSection = document.querySelector('#outputSection');
+
+// function showTarget(e) {
+//    let child = e.target;
+//    let parent = child.parentNode;
+//    let grandParent = parent.parentNode;
+//    console.log(grandParent);
+//    let index = Array.prototype.indexOf.call(grandParent.children, parent);
+//    console.log(index);
+
+// } 
+
+// outputSection.addEventListener('click', showTarget);
+
