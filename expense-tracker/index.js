@@ -5,7 +5,7 @@ window.onload = function() {
 }
 
 let view = {
-   displayExpense: function() {
+   manageViewOperations: function() {
       const expenseRowsList = document.getElementsByClassName('output__tr');
 
       if (expenseRowsList[0].children[3].innerHTML && controller.needNewRow) {
@@ -38,7 +38,7 @@ let view = {
          list[i].children[3].children[0].addEventListener('click', () => {
             controller.needNewRow = false;
             controller.expensesData.splice(i, 1);
-            this.displayExpense();
+            this.manageViewOperations();
          });
       }
       this.checkRowsNumber(list);
@@ -66,7 +66,7 @@ let controller = {
       if (expenseName && expenseDate && expenseAmount) {
          controller.needNewRow = true;
          controller.fetchInputData();
-         view.displayExpense();
+         view.manageViewOperations();
 
          document.querySelector('#name').value = '';
          document.querySelector('#amount').value = '';
