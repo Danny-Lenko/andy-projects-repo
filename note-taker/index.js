@@ -2,7 +2,10 @@
 
 window.onload = function() {
    document.querySelector('#addBtn').addEventListener('click', controller.addNote);
-   document.querySelector('#outputSection').addEventListener('click', controller.getTargetIndex);
+   document.querySelector('#outputSection').addEventListener('click', controller.manageTargetClick);
+   document.querySelector('#overlayBtn').addEventListener('click', () => {
+      document.querySelector('.overlay').style.display = "none";
+   })
 }
 
 let view = {
@@ -25,7 +28,8 @@ let view = {
    },
 
    showDetail: function(index) {
-      
+      document.querySelector('.overlay__text').innerHTML = controller.notes[index-1];
+      document.querySelector('.overlay').style.display = "flex";
    }
 
 };
@@ -56,7 +60,7 @@ let controller = {
       console.log(outputSection.children);
    },
 
-   getTargetIndex: function(e) {
+   manageTargetClick: function(e) {
       const child = e.target;
       const parent = child.parentNode;
       const grandParent = parent.parentNode;
