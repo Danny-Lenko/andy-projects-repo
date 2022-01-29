@@ -31,7 +31,6 @@ let view = {
       document.querySelector('.overlay__text').innerHTML = controller.notes[index-1];
       document.querySelector('.overlay').style.display = "flex";
    }
-
 };
 
 let controller = {
@@ -42,6 +41,7 @@ let controller = {
       if (userNote) {
          controller.notes.push(userNote);
          controller.createNoteContainer();
+         view.addContentToNoteContainer(outputSection.children);
          document.querySelector('#note').value = "";
       }
 
@@ -55,9 +55,6 @@ let controller = {
       noteContainer.appendChild(document.createElement('button'));
       noteContainer.appendChild(document.createElement('button'));
       outputSection.appendChild(noteContainer);
-
-      view.addContentToNoteContainer(outputSection.children);
-      console.log(outputSection.children);
    },
 
    manageTargetClick: function(e) {
@@ -65,31 +62,16 @@ let controller = {
       const parent = child.parentNode;
       const grandParent = parent.parentNode;
       const index = Array.prototype.indexOf.call(grandParent.children, parent);
-      // console.log(child);
       if (child.classList.contains('detailBtn')) {
          view.showDetail(index);
+      } else if (child.classList.contains('delBtn')) {
+         controller.notes.splice(index-1, 1);
+         grandParent.innerHTML = `<h2 style="display: none">here comes the table</h2>`;
+         for (let i = 0; i < controller.notes.length; i++) {
+            controller.createNoteContainer();
+            view.addContentToNoteContainer(grandParent.children);
+         }
       }
       return false;
-   }
+   },
 }
-
-
-
-
-
-
-
-// const outputSection = document.querySelector('#outputSection');
-
-// function showTarget(e) {
-//    let child = e.target;
-//    let parent = child.parentNode;
-//    let grandParent = parent.parentNode;
-//    console.log(grandParent);
-//    let index = Array.prototype.indexOf.call(grandParent.children, parent);
-//    console.log(index);
-
-// } 
-
-// outputSection.addEventListener('click', showTarget);
-
