@@ -15,9 +15,8 @@ let view = {
          containers[i].children[3].innerHTML = 'X';
          containers[i].children[3].classList.add('delBtn');
       }
-
-
    },
+
    truncateString: function(str) {
       if (str.length > 90) {
          str = str.slice(0, 90) + "...";
@@ -25,10 +24,8 @@ let view = {
        return str;
    },
 
-   viewDetail: function(containers, i) {
-      containers[i].children[2].addEventListener('click', () => {
-         console.log(controller.notes[i-1]);
-      })
+   showDetail: function(index) {
+      
    }
 
 };
@@ -64,8 +61,11 @@ let controller = {
       const parent = child.parentNode;
       const grandParent = parent.parentNode;
       const index = Array.prototype.indexOf.call(grandParent.children, parent);
-      console.log(index);
-
+      // console.log(child);
+      if (child.classList.contains('detailBtn')) {
+         view.showDetail(index);
+      }
+      return false;
    }
 }
 

@@ -86,3 +86,40 @@
    }
 
 }
+
+.overlay {
+   height: 120%;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: rgba(23, 32, 42, 0.7);
+   display: flex;
+   justify-content: center;
+		&__content {
+         margin-top: 25vh;
+         width: 60%;
+         height: 40%;
+         background: linen;
+         text-align: left;
+         overflow: scroll;
+         padding: .5em;
+		}
+
+		&__text {
+         font-size: 1.1rem;
+		}
+
+      &__btn {
+         background: none;
+         font-weight: bold;
+         border: none;
+         cursor: pointer;
+         display: flex;
+         width: 100%;
+      }
+      &__btn:hover {
+         background-color: #e5e5e5;
+      }
+}
+

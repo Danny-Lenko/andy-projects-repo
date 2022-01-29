@@ -116,4 +116,48 @@
 .output div:nth-child(odd) {
   margin-left: 1em;
 }
+
+.overlay {
+  height: 120%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(23, 32, 42, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay__content {
+  margin-top: 25vh;
+  width: 60%;
+  height: 40%;
+  background: linen;
+  text-align: left;
+  overflow: scroll;
+  padding: .5em;
+}
+
+.overlay__text {
+  font-size: 1.1rem;
+}
+
+.overlay__btn {
+  background: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.overlay__btn:hover {
+  background-color: #e5e5e5;
+}
 /*# sourceMappingURL=styles.css.map */
