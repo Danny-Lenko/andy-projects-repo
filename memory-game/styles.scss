@@ -1,11 +1,15 @@
 .general {
    display: flex;
    flex-direction: column;
-   max-width: 430px;
+   max-width: 400px;
    margin: 2vh;
 }
 
 .pictures {
+   img {
+      height: 100%;
+      width: 100%;
+   }
 
 		&__grid-area {
          // border: 1px solid grey;
@@ -28,7 +32,7 @@
 
       &__green,
       &__image {
-         height: 135px;
+         height: 125px;
       }
 }
 

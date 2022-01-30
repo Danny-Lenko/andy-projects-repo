@@ -6,8 +6,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 430px;
+  max-width: 400px;
   margin: 2vh;
+}
+
+.pictures img {
+  height: 100%;
+  width: 100%;
 }
 
 .pictures__grid-area {
@@ -27,7 +32,7 @@
 }
 
 .pictures__green, .pictures__image {
-  height: 135px;
+  height: 125px;
 }
 
 .info__score, .info__failed {
