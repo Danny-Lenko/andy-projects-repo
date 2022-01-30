@@ -6,11 +6,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 60vw;
-  margin: 4vh auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
+  max-width: 430px;
+  margin: 2vh;
+}
+
+.pictures__grid-area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.pictures__green {
+  background-color: green;
+}
+
+.pictures__image {
+  display: none;
+}
+
+.pictures__green, .pictures__image {
+  height: 135px;
+}
+
+.info__score, .info__failed {
+  margin-top: 1em;
+  line-height: 1;
 }
 /*# sourceMappingURL=styles.css.map */

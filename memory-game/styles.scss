@@ -1,33 +1,50 @@
 .general {
    display: flex;
    flex-direction: column;
-   max-width: 60vw;
-   margin: 4vh auto;
-   justify-content: center;
-   text-align: center;
+   max-width: 430px;
+   margin: 2vh;
 }
 
 .pictures {
 
-		&__h1 {
-		}
-
 		&__grid-area {
+         // border: 1px solid grey;
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-gap: 5px;
 		}
 
 		&__cell {
+         // border: 1px solid lightgrey;
 		}
 
 		&__green {
+         background-color: green;
 		}
-}
-.picture {
 
-		&__image {
-		}
+      &__image {
+         display: none;
+      }
+
+      &__green,
+      &__image {
+         height: 135px;
+      }
 }
+
 .info {
 
-		&__h1 {
-		}
+   &__score {
+
+   }
+
+   &__failed {
+   }
+
+   &__score,
+   &__failed {
+      margin-top: 1em;
+      line-height: 1;
+   }
 }
+
