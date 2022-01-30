@@ -1,0 +1,33 @@
+.general {
+   display: flex;
+   flex-direction: column;
+   max-width: 60vw;
+   margin: 4vh auto;
+   justify-content: center;
+   text-align: center;
+}
+
+.pictures {
+
+		&__h1 {
+		}
+
+		&__grid-area {
+		}
+
+		&__cell {
+		}
+
+		&__green {
+		}
+}
+.picture {
+
+		&__image {
+		}
+}
+.info {
+
+		&__h1 {
+		}
+}
