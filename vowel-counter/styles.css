@@ -1,0 +1,54 @@
+.general {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 60vw;
+  margin: 4vh auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.input form p {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input form p input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-bottom: .7em;
+  padding: .2em;
+  border: 1px solid #CDCDCD;
+}
+
+.input #checkBtn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: .5em 1em;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.input__h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: .5em;
+}
+/*# sourceMappingURL=styles.css.map */
