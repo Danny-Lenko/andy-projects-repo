@@ -7,11 +7,14 @@ let failed = 0;
 let timeoutID;
 
 function createPlayground() {
+   const picturesCollection = document.querySelector('#picturesCollection');
    const animalsNames = generateRandomSpread();
-   console.log(animalsNames);
 
-   
-
+   for (let i = 0; i < picturesCollection.children.length; i++) {
+      picturesCollection.children[i].children[1].innerHTML = `
+         <img src="img/${animalsNames[i]}.png" alt="${animalsNames[i]}">
+      `
+   }
 }
 createPlayground();
 
