@@ -12,14 +12,9 @@
    }
 
 		&__grid-area {
-         // border: 1px solid grey;
          display: grid;
          grid-template-columns: 1fr 1fr 1fr;
          grid-gap: 5px;
-		}
-
-		&__cell {
-         // border: 1px solid lightgrey;
 		}
 
 		&__green {
@@ -37,13 +32,6 @@
 }
 
 .info {
-
-   &__score {
-
-   }
-
-   &__failed {
-   }
 
    &__score,
    &__failed {
