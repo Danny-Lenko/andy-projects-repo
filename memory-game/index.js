@@ -1,18 +1,22 @@
 "use strict"
 
-const userChoiceArr = [];
+let userChoiceIndexArr = [];
+let userChoiceNamesArr = [];
+let score = 0;
+let failed = 0;
 
 document.querySelector('#picturesCollection').addEventListener('click', manageClicks);
 
 function manageClicks(e) {
 
-   console.log(e.target);
+   // console.log(e.target.parentNode.children[1].children[0].alt);
 
    if (checkClickDifferent(e.target) && e.target.classList.contains('pictures__green')) {
       openPicture(e.target.parentNode.children[1], e.target);
+
+      checkAndShowResult(e.target);
    };
 
-   // console.log(e.target.parentNode.children[1].children[0].alt);
 }
 
 function openPicture(toOpen, toClose) {
@@ -25,12 +29,24 @@ function openPicture(toOpen, toClose) {
    }, 500);
 }
 
-// function checkResult(userChoice) {
-//    const userChoicesArr = [];
+function checkAndShowResult(userChoice) {
+   userChoiceNamesArr.push(userChoice.parentNode.children[1].children[0].alt);
 
-//    userChoicesArr.push(userChoice);
-//    if (userChoicesArr[0] === userChoicesArr[1])
-// }
+   console.log(userChoiceNamesArr);
+
+   if (userChoiceNamesArr[1]) {
+      if (userChoiceNamesArr[0] === userChoiceNamesArr[1]) {
+         score++;
+         document.querySelector('.info__score').innerHTML = `Score: ${score}`;
+      } else {
+         failed++;
+         document.querySelector('.info__failed').innerHTML = `Failed attempts: ${failed}`;   
+      }
+      userChoiceIndexArr = [];
+      userChoiceNamesArr = [];
+   }
+
+}
 
 function checkClickDifferent(userChoice) {
    const child = userChoice;
@@ -39,13 +55,13 @@ function checkClickDifferent(userChoice) {
    const index = Array.prototype.indexOf.call(grandParent.children, parent);
 
    if (userChoice.classList.contains('pictures__green')) {
-      userChoiceArr.push(index);
+      userChoiceIndexArr.push(index);
    }
-   console.log(userChoiceArr);
-   if (userChoiceArr[0] !== userChoiceArr[1]) {
+
+   if (userChoiceIndexArr[0] !== userChoiceIndexArr[1]) {
       return true;
    } else {
-      userChoiceArr.splice(1, 1);
+      userChoiceIndexArr.splice(1, 1);
       return false;
    }
 }
