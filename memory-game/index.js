@@ -4,26 +4,22 @@ let userChoiceIndexArr = [];
 let userChoiceNamesArr = [];
 let score = 0;
 let failed = 0;
+let timeoutID;
 
 document.querySelector('#picturesCollection').addEventListener('click', manageClicks);
 
 function manageClicks(e) {
-
-   // console.log(e.target.parentNode.children[1].children[0].alt);
-
    if (checkClickDifferent(e.target) && e.target.classList.contains('pictures__green')) {
       openPicture(e.target.parentNode.children[1], e.target);
-
       checkAndShowResult(e.target);
    };
-
 }
 
 function openPicture(toOpen, toClose) {
    toClose.style.display = "none";
    toOpen.style.display = "block";
 
-   const timeoutID = window.setTimeout(() => {
+   timeoutID = window.setTimeout(() => {
       toClose.style.display = "block";
       toOpen.style.display = "none";
    }, 500);
@@ -32,10 +28,14 @@ function openPicture(toOpen, toClose) {
 function checkAndShowResult(userChoice) {
    userChoiceNamesArr.push(userChoice.parentNode.children[1].children[0].alt);
 
-   console.log(userChoiceNamesArr);
-
    if (userChoiceNamesArr[1]) {
       if (userChoiceNamesArr[0] === userChoiceNamesArr[1]) {
+         window.clearTimeout(timeoutID);
+         userChoiceIndexArr.forEach(index => {
+            console.log(userChoiceIndexArr);
+            userChoice.parentNode.parentNode.children[index].children[0].style.display = 'none';
+            userChoice.parentNode.parentNode.children[index].children[1].style.display = 'block';
+         });
          score++;
          document.querySelector('.info__score').innerHTML = `Score: ${score}`;
       } else {
@@ -45,7 +45,6 @@ function checkAndShowResult(userChoice) {
       userChoiceIndexArr = [];
       userChoiceNamesArr = [];
    }
-
 }
 
 function checkClickDifferent(userChoice) {
